@@ -11,24 +11,187 @@
     <title>House Price Predictor</title>
   </head>
   <body class="bg-dark">
-    <div class="contaniner">
+    <div class="container">
         <div class="row">
             <div class="card" style="height: 100%; width: 100%; margin-top: 50px">
                 <div class="card-header" style="text-align: center">
                     <h1>WELCOME TO HOUSE PRICE PREDICTOR</h1>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="/" accept-charset="utf-8">
+                    <form id="prediction-form" method="post" action="/predict" accept-charset="utf-8">
 
                         <div class="row">
-
-
                             <div class="col-md-6 form-group" style="text-align: center">
                                 <label><b>Select the Location:</b></label>
                                 <select class="selectpicker form-control" id="location" name="location" required="1">
-                                    {% for location in locations %}
-                                        <option value="{{ location }}">{{ location }}</option>
-                                    {% endfor %}
+                                    <option value="0">Agripada</option>
+                                    <option value="1">Airoli</option>
+                                    <option value="2">Ambarnath</option>
+                                    <option value="3">Ambernath East</option>
+                                    <option value="4">Ambernath West</option>
+                                    <option value="5">Ambivali</option>
+                                    <option value="6">Andheri East</option>
+                                    <option value="7">Andheri West</option>
+                                    <option value="8">Anjurdive</option>
+                                    <option value="9">Asangaon</option>
+                                    <option value="10">Babulnath Road</option>
+                                    <option value="11">Badlapur</option>
+                                    <option value="12">Badlapur East</option>
+                                    <option value="13">Badlapur West</option>
+                                    <option value="14">Bandra East</option>
+                                    <option value="15">Bandra Kurla Complex</option>
+                                    <option value="16">Bandra West</option>
+                                    <option value="17">Belapur</option>
+                                    <option value="18">Bhandup East</option>
+                                    <option value="19">Bhandup West</option>
+                                    <option value="20">Bhayandar East</option>
+                                    <option value="21">Bhayandar West</option>
+                                    <option value="22">Bhiwandi</option>
+                                    <option value="23">Boisar</option>
+                                    <option value="24">Borivali</option>
+                                    <option value="25">Borivali East</option>
+                                    <option value="26">Borivali West</option>
+                                    <option value="27">Byculla</option>
+                                    <option value="28">Chembur</option>
+                                    <option value="29">Colaba</option>
+                                    <option value="30">Cuffe Parade</option>
+                                    <option value="31">Dadar East</option>
+                                    <option value="32">Dadar West</option>
+                                    <option value="33">Dahisar</option>
+                                    <option value="34">Dahisar East</option>
+                                    <option value="35">Dahisar West</option>
+                                    <option value="36">Deonar</option>
+                                    <option value="37">Dharavi</option>
+                                    <option value="38">Diva</option>
+                                    <option value="39">Dombivali</option>
+                                    <option value="40">Dombivali East</option>
+                                    <option value="41">Dombivli (West)</option>
+                                    <option value="42">Dronagiri</option>
+                                    <option value="43">Fort</option>
+                                    <option value="44">Ghansoli</option>
+                                    <option value="45">Ghatkopar East</option>
+                                    <option value="46">Ghatkopar West</option>
+                                    <option value="47">Girgaon</option>
+                                    <option value="48">Goregaon East</option>
+                                    <option value="49">Goregaon West</option>
+                                    <option value="50">Govandi</option>
+                                    <option value="51">Hiranandani Estates</option>
+                                    <option value="52">Jogeshwari East</option>
+                                    <option value="53">Jogeshwari West</option>
+                                    <option value="54">Juhu</option>
+                                    <option value="55">Juinagar</option>
+                                    <option value="56">Kalamboli</option>
+                                    <option value="57">Kalher</option>
+                                    <option value="58">Kalwa</option>
+                                    <option value="59">Kalyan East</option>
+                                    <option value="60">Kalyan West</option>
+                                    <option value="61">Kamothe</option>
+                                    <option value="62">Kandivali East</option>
+                                    <option value="63">Kandivali West</option>
+                                    <option value="64">Kanjurmarg</option>
+                                    <option value="65">Kanjurmarg East</option>
+                                    <option value="66">Karanjade</option>
+                                    <option value="67">Karjat</option>
+                                    <option value="68">Kasheli</option>
+                                    <option value="69">Kewale</option>
+                                    <option value="70">Khar</option>
+                                    <option value="71">Khar West</option>
+                                    <option value="72">Khardi</option>
+                                    <option value="73">Kharghar</option>
+                                    <option value="74">Khopoli</option>
+                                    <option value="75">Koper Khairane</option>
+                                    <option value="76">Koproli</option>
+                                    <option value="77">Kurla</option>
+                                    <option value="78">Kurla East</option>
+                                    <option value="79">Lower Parel</option>
+                                    <option value="80">MATUNGA WEST</option>
+                                    <option value="81">Mahalaxmi</option>
+                                    <option value="82">Mahavir Nagar</option>
+                                    <option value="83">Mahim</option>
+                                    <option value="84">Mahim West</option>
+                                    <option value="85">Malad East</option>
+                                    <option value="86">Malad West</option>
+                                    <option value="87">Manpada</option>
+                                    <option value="88">Marine Lines</option>
+                                    <option value="89">Matunga</option>
+                                    <option value="90">Mazagaon</option>
+                                    <option value="91">Mazgaon</option>
+                                    <option value="92">Mira Road</option>
+                                    <option value="93">Mira Road East</option>
+                                    <option value="94">Mulund</option>
+                                    <option value="95">Mulund East</option>
+                                    <option value="96">Mulund West</option>
+                                    <option value="97">Mumbai Central</option>
+                                    <option value="98">Nahur East</option>
+                                    <option value="99">Naigaon East</option>
+                                    <option value="100">Nala Sopara</option>
+                                    <option value="101">Nalasopara East</option>
+                                    <option value="102">Nalasopara West</option>
+                                    <option value="103">Napeansea Road</option>
+                                    <option value="104">Naupada</option>
+                                    <option value="105">Navade</option>
+                                    <option value="106">Neral</option>
+                                    <option value="107">Nerul</option>
+                                    <option value="108">Nilje Gaon</option>
+                                    <option value="109">Owale</option>
+                                    <option value="110">Palava</option>
+                                    <option value="111">Palghar</option>
+                                    <option value="112">Panch Pakhdi</option>
+                                    <option value="113">Panvel</option>
+                                    <option value="114">Parel</option>
+                                    <option value="115">Patlipada</option>
+                                    <option value="116">Peddar Road</option>
+                                    <option value="117">Powai</option>
+                                    <option value="118">Prabhadevi</option>
+                                    <option value="119">Rabale</option>
+                                    <option value="120">Rasayani</option>
+                                    <option value="121">Sanpada</option>
+                                    <option value="122">Santacruz East</option>
+                                    <option value="123">Santacruz West</option>
+                                    <option value="124">Saphale</option>
+                                    <option value="125">Seawoods</option>
+                                    <option value="126">Sector 12 Kharghar</option>
+                                    <option value="127">Sector 17 Ulwe</option>
+                                    <option value="128">Sector 19 Kamothe</option>
+                                    <option value="129">Sector 19 Kharghar</option>
+                                    <option value="130">Sector 20 Kamothe</option>
+                                    <option value="131">Sector 21 Kamothe</option>
+                                    <option value="132">Sector 22 Kamothe</option>
+                                    <option value="133">Sector 23 Ulwe</option>
+                                    <option value="134">Sector 30 Kharghar</option>
+                                    <option value="135">Sector-12 Kamothe</option>
+                                    <option value="136">Sector-9 Ulwe</option>
+                                    <option value="137">Sewri</option>
+                                    <option value="138">Shahapur</option>
+                                    <option value="139">Shil Phata</option>
+                                    <option value="140">Sion</option>
+                                    <option value="141">Taloja</option>
+                                    <option value="142">Taloje</option>
+                                    <option value="143">Tardeo</option>
+                                    <option value="144">Thane East</option>
+                                    <option value="145">Thane West</option>
+                                    <option value="146">Tilak Nagar</option>
+                                    <option value="147">Titwala</option>
+                                    <option value="148">Ulhasnagar</option>
+                                    <option value="149">Ulwe</option>
+                                    <option value="150">Umroli</option>
+                                    <option value="151">Vangani</option>
+                                    <option value="152">Vasai</option>
+                                    <option value="153">Vasai east</option>
+                                    <option value="154">Vashi</option>
+                                    <option value="155">Vasind</option>
+                                    <option value="156">Vichumbe</option>
+                                    <option value="157">Vikhroli</option>
+                                    <option value="158">Vikroli East</option>
+                                    <option value="159">Ville Parle East</option>
+                                    <option value="160">Ville Parle West</option>
+                                    <option value="161">Virar</option>
+                                    <option value="162">Virar East</option>
+                                    <option value="163">Virar West</option>
+                                    <option value="164">Wadala</option>
+                                    <option value="165">Worli</option>
+                                    <option value="166">kandivali</option>
+                                    <option value="167">kasaradavali thane west</option>
                                 </select>
                             </div>
                             <div class="col-md-6 form-group" style="text-align: center">
@@ -37,11 +200,17 @@
                             </div>
                             <div class="col-md-6 form-group" style="text-align: center">
                                 <label><b>Enter the type of House:</b></label>
-                                <input type="text" class="form-control" id="type" name="type" placeholder="Enter the type of House">
+                                <select class="selectpicker form-control" id="type" name="type" required="1">
+                                        <option value="1">Apartment</option>
+                                        <option value="2">Studio Apartment</option>
+                                        <option value="3">Villa</option>
+                                        <option value="4">Penthouse</option>
+                                        <option value="5">Independent House</option>
+                                </select>
                             </div>
                             <div class="col-md-6 form-group" style="text-align: center">
                                 <label><b>Enter the Carpet Area:</b></label>
-                                <input type="text" class="form-control" id="total_sqft" name="total_sqft" placeholder="Enter the Carpet Area">
+                                <input type="text" class="form-control" id="area" name="area" placeholder="Enter the Carpet Area">
                             </div>
                             <div class="col-md-6 offset-md-3 form-group text-center">
                                 <button class="btn btn-primary" onclick="send_data()">Predict Price</button>
@@ -51,26 +220,30 @@
                     <br>
 
                     <div class="col-md-12" style="text-align: center">
-                        <h3><span id="prediction"></span></h3>
+                        <h3>Prediction: <span>{{ prediction }}</span></h3>
                     </div>
-
-
+                    
                 </div>      
             </div>
         </div>
     </div>
 
     <script>
-        
         function form_handler(event) {
-                event.preventDefault();
-                
-            }
+            event.preventDefault();
+        }
 
-        function send_data()
-        {
-            document.querySelector('form').addEventListener("submit", form_handler);
-
+        function send_data() {
+            document.getElementById("prediction").innerText = "Waiting for prediction...";
+            var fd = new FormData(document.getElementById("prediction-form"));
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/predict", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                    document.getElementById("prediction").innerText = "Prediction: ₹" + xhr.responseText;
+                }
+            };
+            xhr.send(fd);
         }
     </script>
     <!-- Optional JavaScript -->
